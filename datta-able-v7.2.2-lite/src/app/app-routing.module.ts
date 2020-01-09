@@ -9,8 +9,8 @@ const routes: Routes = [
   {
     path: '',
     //component: AuthComponent,
-    component:AuthSigninComponent,
-    //loadChildren: './demo/pages/authentication/authentication.module#AuthenticationModule'
+    //component:AuthSigninComponent,
+    loadChildren: './demo/pages/authentication/authentication.module#AuthenticationModule'
     // children: [
     //   {
     //     path: 'auth',
