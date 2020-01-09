@@ -1,0 +1,262 @@
+
+<form [formGroup]="addForm">
+  <div class="row">
+    <div class="col-sm-12">
+      <app-card cardTitle="Personal Details" [options]="false">
+        <div class="row">
+          <div class="col-md-4">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">First Name *</label>
+              <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                formControlName="firstName">
+           
+            <div>
+                <span *ngIf="addForm.get('firstName').invalid && addForm.get('firstName').touched"
+                  style="color: #a94442;text-align: left;font-size: 12px">First Name is Required</span>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-4">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Last Name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName">
+              <div>
+                  <span *ngIf="addForm.get('firstName').invalid && addForm.get('firstName').touched"
+                    style="color: #a94442;text-align: left;font-size: 12px">Last Name is Required</span>
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col-md-4">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Father's Name *</label>
+              <input type="text" class="form-control" id="fatherName" placeholder="Father's Name"
+                formControlName="fatherName">
+                <div>
+                    <span *ngIf="addForm.get('firstName').invalid && addForm.get('firstName').touched"
+                      style="color: #a94442;text-align: left;font-size: 12px">Father Name is Required</span>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
+            </div>
+          </div>
+          <div class="col-md-4">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Primary Mobile No.</label>
+              <input type="text" class="form-control" id="pMobile" placeholder="Primary Mobile No."
+                formControlName="pMobile">
+            </div>
+          </div>
+          <div class="col-md-4">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Secondry Mobile No.</label>
+              <input type="text" class="form-control" id="sMobile" placeholder="Secondry Mobile No."
+                formControlName="sMobile">
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="blacklist" formControlName="blacklist">
+              <label class="form-check-label" for="exampleCheck1">Black listed</label>
+            </div>
+          </div>
+        </div>
+
+
+      </app-card>
+
+      <app-card cardTitle="Education Details" [options]="false">
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">College</label>
+              <input type="text" class="form-control" id="college" placeholder="College" formControlName="college">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Marks</label>
+              <input type="text" class="form-control" id="collegeMarks" placeholder="Marks"
+                formControlName="collegeMarks">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">High School</label>
+              <input type="text" class="form-control" id="hSchool" placeholder="High School" formControlName="hSchool">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">High School Marks</label>
+              <input type="text" class="form-control" id="hMarks" placeholder="High School Marks"
+                formControlName="hMarks">
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Inter School</label>
+              <input type="text" class="form-control" id="iSchool" placeholder="Inter School" formControlName="iSchool">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Inter School Marks</label>
+              <input type="text" class="form-control" id="iMarks" placeholder="Inter School Marks"
+                formControlName="iMarks">
+            </div>
+          </div>
+
+        </div>
+      </app-card>
+
+      <app-card cardTitle="Interview Details" [options]="false" formArrayName="interview">
+        <!-- <div *ngFor="let i of [1,2,3,4]" > -->
+        <div *ngFor="let group of interviewArray.controls; let i = index;" [formGroupName]="i">
+          <hr />
+
+          <div class="row">
+            <div class="col-md-4">
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Round Number</label>
+                <input type="text" class="form-control" id="round" placeholder="Round Number" formControlName="round">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Interviewer Name </label>
+                <input type="text" class="form-control" id="interviewer" placeholder="Interviewer"
+                  formControlName="interviewer">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Reference Name </label>
+                <input type="text" class="form-control" id="reference" placeholder="Reference Name"
+                  formControlName="reference">
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Profile</label>
+                <input type="text" class="form-control" id="profile" placeholder="Profile" formControlName="profile">
+              </div>
+            </div>
+
+
+
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Joining Date</label>
+                <p-calendar [showIcon]="true" [showTime]="false" formControlName="joining">
+                </p-calendar>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Result</label>
+                <select class="form-control" id="exampleFormControlSelect1"  formControlName="result">
+                  <option>Pass</option>
+                  <option>Reject</option>
+                  <option>Next</option>
+                </select>
+              </div>
+
+
+              <!-- <div class="form-group">
+                <label for="exampleInputEmail1">Feedback</label>
+                <textarea class="form-control" id="feedback" rows="3" formControlName="feedback"></textarea>
+              </div> -->
+            </div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Feedback</label>
+                <textarea class="form-control" id="feedback" rows="3" formControlName="feedback"></textarea>
+              </div>
+            </div>
+       
+
+
+          </div>
+          {{interviewArray.length}}
+          <br />
+          
+          <div class="row" style="float: right" *ngIf="i===(interviewArray.controls.length-1) ">
+            <button type="button" class="btn btn-primary"  (click)="removeInterview(i)">Remove</button>
+            <button type="button" class="btn btn-primary" >Edit</button>
+          </div>
+
+        </div>
+        <br />
+      </app-card>
+
+      <button type="button" class="btn btn-success" (click)="addInterview()">Add More</button>
+    </div>
+
+  </div>
+  <button type="button" class="btn btn-success" (click)="addCandidate()">Submit</button>
+</form>
+
+<!-- <modal id="custom-modal-1">
+    <div class="modal">
+        <div class="modal-body">
+            <h1>A Custom Modal!</h1>
+            <p>
+                Home page text: <input type="text" [(ngModel)]="bodyText" />
+            </p>
+            <button (click)="closeModal('custom-modal-1');">Close</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal> -->
