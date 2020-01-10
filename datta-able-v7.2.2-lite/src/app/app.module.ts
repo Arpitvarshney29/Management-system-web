@@ -28,7 +28,10 @@ import { AddCandidateComponent } from './add-candidate/add-candidate.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {CalendarModule} from 'primeng/calendar';
-import { AuthSigninComponent } from './demo/pages/authentication/auth-signin/auth-signin.component';
+//import { AuthSigninComponent } from './authentication/auth-signin/auth-signin.component';
+//AuthSigninComponent
+//import { AuthSigninComponent } from './demo/pages/authentication/auth-signin/auth-signin.component';
+
 
 
 

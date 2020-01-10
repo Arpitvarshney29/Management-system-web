@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthenticationRoutingModule } from './authentication-routing.module';
-import { AuthSigninComponent } from './auth-signin/auth-signin.component';
+//import { AuthSigninComponent } from './auth-signin/auth-signin.component';
 import { AuthSigninModule } from './auth-signin/auth-signin.module';
 import { AuthSignupRoutingModule } from './auth-signup/auth-signup-routing.module';
 import { AuthSigninRoutingModule } from './auth-signin/auth-signin-routing.module';
@@ -15,9 +15,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     AuthenticationRoutingModule,
     AuthSignupRoutingModule,
     AuthSignupModule,
+    AuthSigninModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [AuthSigninComponent]
+  declarations: []
 })
 export class AuthenticationModule { }

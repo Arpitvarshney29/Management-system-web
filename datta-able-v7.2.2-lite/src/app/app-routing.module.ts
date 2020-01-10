@@ -3,14 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
 import { AuthComponent } from './theme/layout/auth/auth.component';
 import { AddCandidateComponent } from './add-candidate/add-candidate.component';
-import { AuthSigninComponent } from './demo/pages/authentication/auth-signin/auth-signin.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    //component: AuthComponent,
-    //component:AuthSigninComponent,
-    loadChildren: './demo/pages/authentication/authentication.module#AuthenticationModule'
+    loadChildren: './authentication/authentication.module#AuthenticationModule'
     // children: [
     //   {
     //     path: 'auth',
